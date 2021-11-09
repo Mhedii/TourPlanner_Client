@@ -13,7 +13,7 @@ const Add = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/add", {
+        fetch("http://hidden-tundra-68704.herokuapp.com/add", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

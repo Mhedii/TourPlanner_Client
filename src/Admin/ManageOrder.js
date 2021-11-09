@@ -12,14 +12,14 @@ const ManageOrder = () => {
     };
     console.log(status);
     useEffect(() => {
-        fetch("http://localhost:5000/allBookings")
+        fetch("http://hidden-tundra-68704.herokuapp.com/allBookings")
             .then((res) => res.json())
             .then((data) => setBookings(data));
     }, []);
 
     // const status = "apporved";
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`http://hidden-tundra-68704.herokuapp.com/updateStatus/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -28,7 +28,7 @@ const ManageOrder = () => {
         console.log(id);
     };
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteBooking/${id}`, {
+        fetch(`http://hidden-tundra-68704.herokuapp.com/deleteBooking/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

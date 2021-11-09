@@ -11,7 +11,7 @@ const Booking = () => {
 
     const email = sessionStorage.getItem("displayName");
     useEffect(() => {
-        fetch(`http://localhost:5000/singleBooking/${serviceId}`)
+        fetch(`http://hidden-tundra-68704.herokuapp.com/singleBooking/${serviceId}`)
             .then((res) => res.json())
             .then((data) => setService(data));
     }, []);
@@ -26,9 +26,10 @@ const Booking = () => {
 
     const onSubmit = (data) => {
         data.email = email;
+
         data.status = "pending";
 
-        fetch("http://localhost:5000/confirmBooking", {
+        fetch("http://hidden-tundra-68704.herokuapp.com/confirmBooking", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
