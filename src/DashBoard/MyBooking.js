@@ -7,7 +7,7 @@ const MyBooking = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooking/${Name}`)
+        fetch(`http://hidden-tundra-68704.herokuapp.com/myBooking/${Name}`)
             .then((res) => res.json())
             .then((data) => setServices(data));
         // .then((data) => console.log(data));
@@ -16,7 +16,7 @@ const MyBooking = () => {
 
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteBooking/${id}`, {
+        fetch(`http://hidden-tundra-68704.herokuapp.com/deleteBooking/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
